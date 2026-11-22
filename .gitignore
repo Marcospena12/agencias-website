@@ -1,0 +1,12 @@
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
+# Dependências (site estático não tem, mas por segurança)
+node_modules/
+
+# Logs
+*.log
+
+# Vercel (metadados locais do deploy)
+.vercel/

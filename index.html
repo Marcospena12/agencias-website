@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta
+    name="description"
+    content="Projeto acadêmico da disciplina de Power BI: análise geográfica da distribuição das agências bancárias da cidade de Betim (MG), com mapa interativo no ArcGIS e painel de BI."
+  />
+  <title>Agências Bancárias de Betim · Power BI</title>
+
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <meta name="theme-color" content="#0b1e2d" />
+
+  <meta property="og:title" content="Agências Bancárias de Betim · Power BI" />
+  <meta
+    property="og:description"
+    content="Projeto acadêmico da disciplina de Power BI: análise geográfica da distribuição das agências bancárias da cidade de Betim (MG), com mapa interativo no ArcGIS e painel de BI."
+  />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#inicio" class="header__brand">Betim<span> · BI</span></a>
+      <nav class="header__nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#visualizacoes">Visualizações</a>
+        <a href="#equipe">Equipe</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="inicio" class="hero">
+      <div class="aurora aurora--1" aria-hidden="true"></div>
+      <div class="aurora aurora--2" aria-hidden="true"></div>
+      <div class="aurora aurora--3" aria-hidden="true"></div>
+
+      <canvas id="hero-canvas" class="hero__canvas" aria-hidden="true"></canvas>
+
+      <canvas id="money-canvas" class="money-canvas" aria-hidden="true"></canvas>
+
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <div class="container hero__inner reveal">
+        <span class="hero__tag">Projeto acadêmico · Power BI</span>
+        <h1 class="hero__title">Agências Bancárias de Betim</h1>
+        <p class="hero__subtitle">
+          Análise geográfica da distribuição das agências na cidade, com mapa
+          interativo e painel de BI.
+        </p>
+        <div class="hero__actions">
+          <a
+            class="btn btn--primary"
+            href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Abrir mapa no ArcGIS
+          </a>
+          <a class="btn btn--secondary" id="btn-powerbi-hero" href="#visualizacoes">
+            Ver painel Power BI
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre" class="section">
+      <div class="container reveal">
+        <h2 class="section__title">Sobre o trabalho</h2>
+        <p class="section__text">
+          Este trabalho apresenta a distribuição geográfica das agências
+          bancárias da cidade de Betim (MG). A partir de um mapa elaborado no
+          ArcGIS no início do semestre, é possível visualizar a localização
+          de cada agência e identificar regiões com maior ou menor concentração
+          de unidades bancárias.
+        </p>
+        <p class="section__text">
+          O objetivo é complementar essa análise espacial com um painel de
+          indicadores construído no Power BI, utilizando os mesmos dados.
+          Assim, a visualização geográfica do ArcGIS é combinada com gráficos
+          interativos de Business Intelligence, facilitando a leitura e a
+          interpretação dos resultados.
+        </p>
+      </div>
+    </section>
+
+    <section id="visualizacoes" class="section">
+      <div class="container reveal">
+        <h2 class="section__title">Visualizações</h2>
+        <div class="cards">
+          <article class="card">
+            <h3 class="card__title">Mapa Geográfico (ArcGIS)</h3>
+            <p class="card__text">
+              Mapa interativo com a localização das agências bancárias em
+              Betim, elaborado no ArcGIS.
+            </p>
+            <a
+              class="btn btn--primary"
+              href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Abrir mapa
+            </a>
+          </article>
+
+          <article class="card">
+            <h3 class="card__title">Painel Power BI</h3>
+            <p class="card__text">
+              Painel de indicadores com os mesmos dados do mapa, com gráficos
+              interativos para análise da distribuição das agências.
+            </p>
+            <span id="powerbi-status" class="badge">Em breve</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="equipe" class="section">
+      <div class="container reveal">
+        <h2 class="section__title">Equipe</h2>
+        <div class="cards cards--team">
+          <article class="card card--member">
+            <h3 class="card__title">Marcos Pena</h3>
+          </article>
+          <article class="card card--member">
+            <h3 class="card__title">Vladimir</h3>
+          </article>
+          <article class="card card--member">
+            <h3 class="card__title">Arthur Henry</h3>
+          </article>
+          <article class="card card--member">
+            <h3 class="card__title">Rafael Kin</h3>
+          </article>
+          <article class="card card--member">
+            <h3 class="card__title">Patrick Patricio</h3>
+          </article>
+        </div>
+        <p class="section__text team__meta">
+          Disciplina: <strong>Business Intelligence</strong> ·
+          Professor(a): <strong>Clóvis Tavares</strong> ·
+          Instituição: <strong>PUC Betim</strong>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© <span id="ano"></span> Agências Bancárias de Betim · Projeto acadêmico</p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/money3d.js" onerror="this.remove()"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

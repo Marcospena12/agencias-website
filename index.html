@@ -38,8 +38,9 @@
       <nav class="header__nav" aria-label="Navegação principal">
         <a href="#problema">O problema</a>
         <a href="#numeros">Números</a>
-        <a href="#estrutura-tecnica">Estrutura técnica</a>
         <a href="#visualizacoes">Visualizações</a>
+        <a href="#analise">Análise das instituições</a>
+        <a href="#estrutura-tecnica">Estrutura técnica</a>
         <a href="#equipe">Equipe</a>
       </nav>
     </div>
@@ -215,134 +216,6 @@
               </a>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="estrutura-tecnica" class="section section--estrutura" aria-labelledby="estrutura-title">
-      <div class="container container--wide reveal">
-        <h2 class="section__title" id="estrutura-title">Estrutura técnica</h2>
-
-        <p class="section__text">
-          O trabalho integra três ferramentas, cada uma com um papel definido.
-        </p>
-
-        <div class="cards cards--tools">
-          <article class="card tool-card">
-            <h3 class="tool-card__title">ArcGIS</h3>
-            <p class="tool-card__text">
-              Base geográfica. Agências georreferenciadas com latitude e
-              longitude.
-            </p>
-          </article>
-          <article class="card tool-card">
-            <h3 class="tool-card__title">Power BI</h3>
-            <p class="tool-card__text">
-              Modelagem e análise. Modelo estrela, medidas em DAX e dashboard de
-              2 páginas.
-            </p>
-          </article>
-          <article class="card tool-card">
-            <h3 class="tool-card__title">Este site</h3>
-            <p class="tool-card__text">
-              Reúne e apresenta o trabalho em um só lugar.
-            </p>
-          </article>
-        </div>
-
-        <div class="estrutura__diagram" aria-labelledby="diagram-title">
-          <h3 id="diagram-title" class="estrutura__diagram-title">Modelo de dados (estrela)</h3>
-          <div class="estrutura__svg-wrap">
-            <svg class="estrutura__svg" viewBox="-30 -30 660 480" role="img" aria-label="Diagrama de modelo estrela: tabela fato Fato_Agencias no centro conectada a cinco dimensões ao redor">
-              <!-- Dimensões -->
-              <g class="estrutura__dim" data-name="Dim_Agencia">
-                <circle class="estrutura__dim-circle" cx="120" cy="100" r="55"></circle>
-                <text class="estrutura__dim-label" x="120" y="100">Dim_Agencia</text>
-              </g>
-              <g class="estrutura__dim" data-name="Dim_Instituicao">
-                <circle class="estrutura__dim-circle" cx="300" cy="30" r="55"></circle>
-                <text class="estrutura__dim-label" x="300" y="30">Dim_Instituicao</text>
-              </g>
-              <g class="estrutura__dim" data-name="Dim_Regiao">
-                <circle class="estrutura__dim-circle" cx="480" cy="100" r="55"></circle>
-                <text class="estrutura__dim-label" x="480" y="100">Dim_Regiao</text>
-              </g>
-              <g class="estrutura__dim" data-name="Dim_Periodo">
-                <circle class="estrutura__dim-circle" cx="480" cy="320" r="55"></circle>
-                <text class="estrutura__dim-label" x="480" y="320">Dim_Periodo</text>
-              </g>
-              <g class="estrutura__dim" data-name="Dim_Canal">
-                <circle class="estrutura__dim-circle" cx="120" cy="320" r="55"></circle>
-                <text class="estrutura__dim-label" x="120" y="320">Dim_Canal</text>
-              </g>
-
-              <!-- Linhas conectando ao fato -->
-              <line class="estrutura__line" x1="175" y1="100" x2="245" y2="180"></line>
-              <line class="estrutura__line" x1="300" y1="85" x2="300" y2="140"></line>
-              <line class="estrutura__line" x1="425" y1="100" x2="355" y2="180"></line>
-              <line class="estrutura__line" x1="425" y1="320" x2="355" y2="240"></line>
-              <line class="estrutura__line" x1="175" y1="320" x2="245" y2="240"></line>
-
-              <!-- Tabela fato no centro -->
-              <rect class="estrutura__fato-rect" x="265" y="160" width="70" height="80" rx="6"></rect>
-              <text class="estrutura__fato-label" x="300" y="190">Fato_Agencias</text>
-              <text class="estrutura__fato-sub" x="300" y="215">(fato)</text>
-            </svg>
-          </div>
-          <p class="estrutura__diagram-legend">Modelo estrela: 1 tabela fato e 5 dimensões.</p>
-        </div>
-
-        <div class="estrutura__measures" aria-labelledby="measures-title">
-          <h3 id="measures-title" class="estrutura__measures-title">Medidas DAX</h3>
-          <table class="estrutura__table">
-            <thead>
-              <tr>
-                <th scope="col">Medida</th>
-                <th scope="col">O que calcula</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td><strong>Total de Agências</strong></td>
-                <td>Contagem de agências (COUNTROWS)</td>
-              </tr>
-              <tr>
-                <td><strong>Distância Média (km)</strong></td>
-                <td>Média da distância das agências ao centro</td>
-              </tr>
-              <tr>
-                <td><strong>Ativo Médio (R$ bi)</strong></td>
-                <td>Média do ativo total por instituição</td>
-              </tr>
-              <tr>
-                <td><strong>Reclamações Médias</strong></td>
-                <td>Média do índice de reclamações por instituição</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="estrutura__measures-note">
-            Ativo e reclamações são calculados por instituição (e não por
-            agência), para que bancos com mais agências não pesem mais na média.
-            São dados nacionais por instituição, não específicos de Betim. O
-            Sicoob Crediesmeraldas não possui esses dados.
-          </p>
-        </div>
-
-        <div class="estrutura__actions">
-          <a
-            class="btn btn--primary"
-            href="#visualizacoes"
-          >
-            Abrir dashboard
-          </a>
-          <a
-            class="btn btn--secondary"
-            href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Ver mapa no ArcGIS
-          </a>
         </div>
       </div>
     </section>
@@ -619,6 +492,333 @@
       </div>
     </section>
 
+    <section id="analise" class="section section--bi section--analise" aria-labelledby="analise-title">
+      <div class="container container--wide reveal">
+        <div class="bi-intro">
+          <div class="bi-intro__copy">
+            <span class="eyebrow">Análise · Power BI</span>
+            <h2 class="section__title" id="analise-title">Análise das instituições</h2>
+            <p class="section__text">
+              Depois de ver onde ficam as agências, vamos comparar as instituições
+              que atuam em Betim.
+            </p>
+            <p class="section__text">
+              A segunda página do dashboard compara as sete instituições financeiras
+              com agências na cidade. Os três gráficos abaixo usam os mesmos dados
+              do painel: ativo total, índice de reclamações e distância média das
+              agências ao centro.
+            </p>
+          </div>
+          <div class="bi-intro__aside">
+            <div class="bi-intro__actions">
+              <a
+                class="btn btn--primary"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-powerbi-link
+              >
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                  <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                </svg>
+                Ver dashboard completo
+              </a>
+            </div>
+            <p class="bi-intro__hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 11v5"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+              O relatório original exige login institucional no Power BI. A prévia da página de visão geral é pública.
+            </p>
+          </div>
+        </div>
+
+        <div class="bi-shell">
+          <div class="bi-shell__bar">
+            <span class="bi-shell__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="bi-shell__url">app.powerbi.com · Análise das instituições</span>
+            <span class="bi-shell__badge"><i></i>Página 2</span>
+          </div>
+
+          <div class="bi" id="analise-dashboard">
+            <header class="bi__header">
+              <div class="bi__heading">
+                <h3>Agências bancárias em Betim</h3>
+                <p>20 agências · 7 instituições · 4 regiões</p>
+              </div>
+              <p class="bi__meta">Painel de BI · Instituição, região e tipo</p>
+            </header>
+
+            <div class="bi__layout">
+              <aside class="bi-filters" aria-label="Filtros do painel">
+                <div class="bi-filters__head">
+                  <span class="bi-filters__title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M3 4h18l-7 8v6l-4 2v-8L3 4Z"></path>
+                    </svg>
+                    Filtros
+                  </span>
+                  <button class="bi-reset" id="analise-reset" type="button" disabled>Limpar</button>
+                </div>
+                <div class="bi-filters__groups">
+                  <section class="bi-filter" aria-labelledby="analise-filter-instituicao-label">
+                    <div class="bi-filter__head">
+                      <h4 id="analise-filter-instituicao-label">Instituição</h4>
+                      <span class="bi-filter__count" data-count-for="instituicao">7</span>
+                    </div>
+                    <div class="bi-filter__options" id="analise-filter-instituicao" role="group" aria-labelledby="analise-filter-instituicao-label"></div>
+                  </section>
+
+                  <section class="bi-filter" aria-labelledby="analise-filter-regiao-label">
+                    <div class="bi-filter__head">
+                      <h4 id="analise-filter-regiao-label">Região</h4>
+                      <span class="bi-filter__count" data-count-for="regiao">4</span>
+                    </div>
+                    <div class="bi-filter__options" id="analise-filter-regiao" role="group" aria-labelledby="analise-filter-regiao-label"></div>
+                  </section>
+
+                  <section class="bi-filter" aria-labelledby="analise-filter-tipo-label">
+                    <div class="bi-filter__head">
+                      <h4 id="analise-filter-tipo-label">Tipo de instituição</h4>
+                      <span class="bi-filter__count" data-count-for="tipo">3</span>
+                    </div>
+                    <div class="bi-filter__options" id="analise-filter-tipo" role="group" aria-labelledby="analise-filter-tipo-label"></div>
+                  </section>
+                </div>
+                <p class="bi-filters__hint">Selecione um ou mais valores em cada grupo.</p>
+              </aside>
+
+              <div class="bi__content">
+                <div class="bi__row bi__row--top">
+                  <article class="bi-panel" aria-labelledby="analise-chart-ativo-title">
+                    <div class="bi-panel__head">
+                      <h4 id="analise-chart-ativo-title">Ativo total por instituição (R$ bi)</h4>
+                    </div>
+                    <div class="analise__chart" id="analise-chart-ativo" role="img" aria-label="Gráfico de barras verticais: ativo total por instituição em bilhões de reais. Itaú 2.834,36; Banco do Brasil 2.605,72; Caixa 2.357,61; Bradesco 1.990,63; Santander 1.316,47; Mercantil do Brasil 40,23; Sicoob Crediesmeraldas sem dados. Média 1.857,50."></div>
+                    <p class="analise__card-note">Sicoob Crediesmeraldas: sem dados de ativo.</p>
+                  </article>
+
+                  <article class="bi-panel" aria-labelledby="analise-chart-reclamacoes-title">
+                    <div class="bi-panel__head">
+                      <h4 id="analise-chart-reclamacoes-title">Índice de reclamações por instituição</h4>
+                    </div>
+                    <div class="analise__chart" id="analise-chart-reclamacoes" role="img" aria-label="Gráfico de barras horizontais: índice de reclamações. Banco do Brasil 19,36; Caixa 23,12; Itaú 34,12; Santander 34,49; Bradesco 48,92; Mercantil do Brasil 178,00; Sicoob Crediesmeraldas sem dados."></div>
+                    <p class="analise__card-note">
+                      Mercantil do Brasil: valor muito acima das demais instituições.
+                      Sicoob Crediesmeraldas: sem dados de reclamações.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="bi__row bi__row--single">
+                  <article class="bi-panel" aria-labelledby="analise-chart-scatter-title">
+                    <div class="bi-panel__head">
+                      <h4 id="analise-chart-scatter-title">Distância ao centro x reclamações</h4>
+                    </div>
+                    <div class="analise__chart" id="analise-chart-scatter" role="img" aria-label="Gráfico de dispersão: distância média ao centro em quilômetros no eixo horizontal e índice de reclamações no eixo vertical. Banco do Brasil 4,63 quilômetros e 19,36; Caixa 3,46 e 23,12; Itaú 3,44 e 34,12; Bradesco 3,05 e 48,92; Santander 1,85 e 34,49; Mercantil do Brasil 0,37 e 178,00."></div>
+                    <p class="analise__card-note">
+                      Sicoob Crediesmeraldas não aparece por não haver índice de
+                      reclamações. Os eixos mostram variáveis diferentes; o gráfico
+                      não indica relação de causa e efeito.
+                    </p>
+                  </article>
+                </div>
+
+                <div class="bi-status">
+                  <p class="bi-status__summary" id="analise-status-summary" aria-live="polite">Mostrando todas as 20 agências</p>
+                  <div class="bi-status__chips" id="analise-status-chips"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="analise__callout" aria-labelledby="analise-callout-title">
+          <h3 class="analise__callout-title" id="analise-callout-title">
+            Como ler esta análise
+          </h3>
+          <ul class="analise__callout-list">
+            <li>
+              O ativo total é uma medida nacional de cada instituição, em
+              bilhões de reais. Ele não representa a participação do banco em
+              Betim.
+            </li>
+            <li>
+              O índice de reclamações vem do Banco Central do Brasil.
+              Valores maiores indicam mais reclamações registradas em relação
+              ao tamanho da operação.
+            </li>
+            <li>
+              A distância média é calculada a partir das agências de cada
+              instituição na cidade, em quilômetros em relação ao centro.
+            </li>
+            <li>
+              Onde não há dados, os gráficos mostram “n/d” e não consideram a
+              instituição no cálculo das médias.
+            </li>
+          </ul>
+        </aside>
+
+        <details class="bi-data">
+          <summary>
+            Ver dados em tabela
+            <span id="analise-table-count">7 instituições</span>
+          </summary>
+          <div class="bi-data__scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Instituição</th>
+                  <th scope="col">Ativo total (R$ bi)</th>
+                  <th scope="col">Índice de reclamações</th>
+                  <th scope="col">Distância média ao centro (km)</th>
+                </tr>
+              </thead>
+              <tbody id="analise-table-body"></tbody>
+            </table>
+          </div>
+        </details>
+
+        <p class="bi-footnote">
+          Gráficos reconstruídos com os mesmos dados do relatório acadêmico.
+          O ativo e o índice de reclamações são medidas nacionais por
+          instituição, não específicas de Betim. O arquivo .pbix não é
+          distribuído e o relatório original exige login institucional.
+        </p>
+      </div>
+    </section>
+
+    <section id="estrutura-tecnica" class="section section--estrutura" aria-labelledby="estrutura-title">
+      <div class="container container--wide reveal">
+        <h2 class="section__title" id="estrutura-title">Estrutura técnica</h2>
+
+        <p class="section__text">
+          O trabalho integra três ferramentas, cada uma com um papel definido.
+        </p>
+
+        <div class="cards cards--tools">
+          <article class="card tool-card">
+            <h3 class="tool-card__title">ArcGIS</h3>
+            <p class="tool-card__text">
+              Base geográfica. Agências georreferenciadas com latitude e
+              longitude.
+            </p>
+          </article>
+          <article class="card tool-card">
+            <h3 class="tool-card__title">Power BI</h3>
+            <p class="tool-card__text">
+              Modelagem e análise. Modelo estrela, medidas em DAX e dashboard de
+              2 páginas.
+            </p>
+          </article>
+          <article class="card tool-card">
+            <h3 class="tool-card__title">Este site</h3>
+            <p class="tool-card__text">
+              Reúne e apresenta o trabalho em um só lugar.
+            </p>
+          </article>
+        </div>
+
+        <div class="estrutura__diagram" aria-labelledby="diagram-title">
+          <h3 id="diagram-title" class="estrutura__diagram-title">Modelo de dados (estrela)</h3>
+          <div class="estrutura__svg-wrap">
+            <svg class="estrutura__svg" viewBox="-30 -30 660 480" role="img" aria-label="Diagrama de modelo estrela: tabela fato Fato_Agencias no centro conectada a cinco dimensões ao redor">
+              <!-- Dimensões -->
+              <g class="estrutura__dim" data-name="Dim_Agencia">
+                <circle class="estrutura__dim-circle" cx="120" cy="100" r="55"></circle>
+                <text class="estrutura__dim-label" x="120" y="100">Dim_Agencia</text>
+              </g>
+              <g class="estrutura__dim" data-name="Dim_Instituicao">
+                <circle class="estrutura__dim-circle" cx="300" cy="30" r="55"></circle>
+                <text class="estrutura__dim-label" x="300" y="30">Dim_Instituicao</text>
+              </g>
+              <g class="estrutura__dim" data-name="Dim_Regiao">
+                <circle class="estrutura__dim-circle" cx="480" cy="100" r="55"></circle>
+                <text class="estrutura__dim-label" x="480" y="100">Dim_Regiao</text>
+              </g>
+              <g class="estrutura__dim" data-name="Dim_Periodo">
+                <circle class="estrutura__dim-circle" cx="480" cy="320" r="55"></circle>
+                <text class="estrutura__dim-label" x="480" y="320">Dim_Periodo</text>
+              </g>
+              <g class="estrutura__dim" data-name="Dim_Canal">
+                <circle class="estrutura__dim-circle" cx="120" cy="320" r="55"></circle>
+                <text class="estrutura__dim-label" x="120" y="320">Dim_Canal</text>
+              </g>
+
+              <!-- Linhas conectando ao fato -->
+              <line class="estrutura__line" x1="175" y1="100" x2="245" y2="180"></line>
+              <line class="estrutura__line" x1="300" y1="85" x2="300" y2="140"></line>
+              <line class="estrutura__line" x1="425" y1="100" x2="355" y2="180"></line>
+              <line class="estrutura__line" x1="425" y1="320" x2="355" y2="240"></line>
+              <line class="estrutura__line" x1="175" y1="320" x2="245" y2="240"></line>
+
+              <!-- Tabela fato no centro -->
+              <rect class="estrutura__fato-rect" x="265" y="160" width="70" height="80" rx="6"></rect>
+              <text class="estrutura__fato-label" x="300" y="190">Fato_Agencias</text>
+              <text class="estrutura__fato-sub" x="300" y="215">(fato)</text>
+            </svg>
+          </div>
+          <p class="estrutura__diagram-legend">Modelo estrela: 1 tabela fato e 5 dimensões.</p>
+        </div>
+
+        <div class="estrutura__measures" aria-labelledby="measures-title">
+          <h3 id="measures-title" class="estrutura__measures-title">Medidas DAX</h3>
+          <table class="estrutura__table">
+            <thead>
+              <tr>
+                <th scope="col">Medida</th>
+                <th scope="col">O que calcula</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Total de Agências</strong></td>
+                <td>Contagem de agências (COUNTROWS)</td>
+              </tr>
+              <tr>
+                <td><strong>Distância Média (km)</strong></td>
+                <td>Média da distância das agências ao centro</td>
+              </tr>
+              <tr>
+                <td><strong>Ativo Médio (R$ bi)</strong></td>
+                <td>Média do ativo total por instituição</td>
+              </tr>
+              <tr>
+                <td><strong>Reclamações Médias</strong></td>
+                <td>Média do índice de reclamações por instituição</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="estrutura__measures-note">
+            Ativo e reclamações são calculados por instituição (e não por
+            agência), para que bancos com mais agências não pesem mais na média.
+            São dados nacionais por instituição, não específicos de Betim. O
+            Sicoob Crediesmeraldas não possui esses dados.
+          </p>
+        </div>
+
+        <div class="estrutura__actions">
+          <a
+            class="btn btn--primary"
+            href="#visualizacoes"
+          >
+            Abrir dashboard
+          </a>
+          <a
+            class="btn btn--secondary"
+            href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver mapa no ArcGIS
+          </a>
+        </div>
+      </div>
+    </section>
+
     <section id="equipe" class="section">
       <div class="container reveal">
         <h2 class="section__title">Equipe</h2>
@@ -658,5 +858,6 @@
   <script src="assets/data/agencias.js"></script>
   <script src="js/main.js"></script>
   <script src="js/bi.js"></script>
+  <script src="js/analise.js"></script>
 </body>
 </html>

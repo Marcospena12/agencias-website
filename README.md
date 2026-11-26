@@ -29,6 +29,12 @@ O site é de página única e acompanha o desenvolvimento do projeto:
   - interação no estilo Power BI: clicar em uma barra, fatia, coluna ou
     ponto do mapa aplica o "foco" e filtra o restante do painel;
   - tabela de dados recolhível com as mesmas informações do relatório.
+- **Análise das instituições** — recriação navegável da segunda página do
+  relatório, com os mesmos filtros por instituição, região e tipo:
+  - ativo total por instituição (R$ bi), com linha de referência da média;
+  - índice de reclamações por instituição;
+  - dispersão entre distância média ao centro e índice de reclamações;
+  - tabela de dados recolhível com as medidas por instituição.
 - **Equipe** — Marcos Pena, Vladimir, Arthur Henry, Rafael Kin e
   Patrick Patricio.
 

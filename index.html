@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta
     name="description"
-    content="Projeto acadêmico da disciplina de Power BI: análise geográfica da distribuição das agências bancárias da cidade de Betim (MG), com mapa interativo no ArcGIS e painel de BI."
+    content="Projeto acadêmico da disciplina de Power BI: análise geográfica da distribuição das agências bancárias da cidade de Betim (MG), com mapa interativo no ArcGIS e prévia interativa do painel de BI."
   />
   <title>Agências Bancárias de Betim · Power BI</title>
 
@@ -15,7 +15,7 @@
   <meta property="og:title" content="Agências Bancárias de Betim · Power BI" />
   <meta
     property="og:description"
-    content="Projeto acadêmico da disciplina de Power BI: análise geográfica da distribuição das agências bancárias da cidade de Betim (MG), com mapa interativo no ArcGIS e painel de BI."
+    content="Projeto acadêmico da disciplina de Power BI: análise geográfica da distribuição das agências bancárias da cidade de Betim (MG), com mapa interativo no ArcGIS e prévia interativa do painel de BI."
   />
   <meta property="og:type" content="website" />
 
@@ -36,7 +36,9 @@
     <div class="container header__inner">
       <a href="#inicio" class="header__brand">Betim<span> · BI</span></a>
       <nav class="header__nav" aria-label="Navegação principal">
-        <a href="#sobre">Sobre</a>
+        <a href="#problema">O problema</a>
+        <a href="#numeros">Números</a>
+        <a href="#estrutura-tecnica">Estrutura técnica</a>
         <a href="#visualizacoes">Visualizações</a>
         <a href="#equipe">Equipe</a>
       </nav>
@@ -78,55 +80,542 @@
       </div>
     </section>
 
-    <section id="sobre" class="section">
+    <section id="problema" class="section section--problema" aria-labelledby="problema-title">
       <div class="container reveal">
-        <h2 class="section__title">Sobre o trabalho</h2>
-        <p class="section__text">
-          Este trabalho apresenta a distribuição geográfica das agências
-          bancárias da cidade de Betim (MG). A partir de um mapa elaborado no
-          ArcGIS no início do semestre, é possível visualizar a localização
-          de cada agência e identificar regiões com maior ou menor concentração
-          de unidades bancárias.
-        </p>
-        <p class="section__text">
-          O objetivo é complementar essa análise espacial com um painel de
-          indicadores construído no Power BI, utilizando os mesmos dados.
-          Assim, a visualização geográfica do ArcGIS é combinada com gráficos
-          interativos de Business Intelligence, facilitando a leitura e a
-          interpretação dos resultados.
-        </p>
+        <h2 class="section__title" id="problema-title">O problema</h2>
+
+        <blockquote class="problema__quote">
+          <p>
+            As agências bancárias de Betim estão concentradas no centro? Como a
+            rede se distribui entre as regiões e quais instituições atendem cada
+            uma delas?
+          </p>
+        </blockquote>
+
+        <div class="problema__text">
+          <p>
+            O acesso físico a agências bancárias influencia o dia a dia do morador,
+            pois muitos serviços ainda dependem do atendimento presencial, e a
+            localização das agências pode variar muito entre bairros e regiões de
+            uma mesma cidade.
+          </p>
+          <p>
+            Este trabalho busca responder à pergunta central mapeando as agências
+            de Betim, classificando-as por instituição, tipo (público, privado,
+            cooperativa) e região, e medindo a distância de cada uma ao centro.
+          </p>
+        </div>
+
+        <div class="cards cards--highlights">
+          <article class="card highlight-card">
+            <p class="highlight-card__value">10 de 20</p>
+            <p class="highlight-card__label">agências na Região Central</p>
+          </article>
+          <article class="card highlight-card">
+            <p class="highlight-card__value">3,28 km</p>
+            <p class="highlight-card__label">distância média ao centro</p>
+          </article>
+          <article class="card highlight-card">
+            <p class="highlight-card__value">2 agências</p>
+            <p class="highlight-card__label">
+              no Eixo Rodoviário / Shopping Partage, a região com menos agências
+            </p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <section id="visualizacoes" class="section">
-      <div class="container reveal">
-        <h2 class="section__title">Visualizações</h2>
-        <div class="cards">
-          <article class="card">
-            <h3 class="card__title">Mapa Geográfico (ArcGIS)</h3>
-            <p class="card__text">
-              Mapa interativo com a localização das agências bancárias em
-              Betim, elaborado no ArcGIS.
+    <section id="numeros" class="section section--numeros" aria-labelledby="numeros-title">
+      <div class="container container--wide reveal">
+        <h2 class="section__title" id="numeros-title">Betim em números</h2>
+        <div class="cards cards--stats">
+          <article class="card numero-card">
+            <p class="numero-card__value">20</p>
+            <h3 class="numero-card__title">Agências mapeadas</h3>
+            <p class="numero-card__text">
+              7 instituições financeiras em 4 regiões de Betim, levantadas e
+              georreferenciadas no trabalho.
             </p>
-            <a
-              class="btn btn--primary"
-              href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Abrir mapa
-            </a>
           </article>
 
-          <article class="card">
-            <h3 class="card__title">Painel Power BI</h3>
-            <p class="card__text">
-              Painel de indicadores com os mesmos dados do mapa, com gráficos
-              interativos para análise da distribuição das agências.
+          <article class="card numero-card">
+            <p class="numero-card__value">3 modelos</p>
+            <h3 class="numero-card__title">Opções para cada perfil</h3>
+            <p class="numero-card__text">
+              Betim tem 11 agências privadas, 7 públicas e 2 de cooperativa de
+              crédito. O morador escolhe o que combina com o seu perfil.
             </p>
-            <span id="powerbi-status" class="badge">Em breve</span>
+          </article>
+
+          <article class="card numero-card">
+            <p class="numero-card__value">4 regiões</p>
+            <h3 class="numero-card__title">Rede além do centro</h3>
+            <p class="numero-card__text">
+              Há agências no Centro, em Alterosas, em Teresópolis/Imbiruçu
+              (cerca de 8,8 km do centro) e no eixo do Shopping Partage.
+            </p>
+          </article>
+
+          <article class="card numero-card">
+            <p class="numero-card__value">10 agências</p>
+            <h3 class="numero-card__title">Centro com acesso fácil</h3>
+            <p class="numero-card__text">
+              Metade da rede fica na Região Central, a menos de 400 m do ponto
+              de referência, entre a Av. Governador Valadares e a Av. Amazonas.
+            </p>
+          </article>
+
+          <article class="card numero-card">
+            <p class="numero-card__value">19,4 e 23,1</p>
+            <h3 class="numero-card__title">Menores índices de reclamação</h3>
+            <p class="numero-card__text">
+              Banco do Brasil (19,4) e Caixa (23,1) têm os menores índices de
+              reclamações entre as instituições analisadas.
+            </p>
+            <p class="numero-card__note">
+              Índice nacional por instituição, não específico de Betim.
+            </p>
+          </article>
+
+          <article class="card numero-card">
+            <p class="numero-card__value">7 de 7</p>
+            <h3 class="numero-card__title">Atendimento digital</h3>
+            <p class="numero-card__text">
+              Todas as instituições combinam agência física, app, internet
+              banking e central de atendimento. Várias também atendem por
+              WhatsApp.
+            </p>
+          </article>
+
+          <article class="card numero-card">
+            <p class="numero-card__value">3 ferramentas</p>
+            <h3 class="numero-card__title">Trabalho integrado</h3>
+            <p class="numero-card__text">
+              ArcGIS para a base geográfica, Power BI para a análise e este site
+              para reunir tudo em um só lugar.
+            </p>
+          </article>
+
+          <article class="card numero-card">
+            <p class="numero-card__value">Explore</p>
+            <h3 class="numero-card__title">Dashboard interativo</h3>
+            <p class="numero-card__text">
+              Filtre por instituição, região e tipo de banco e veja mapa,
+              gráficos e indicadores.
+            </p>
+            <div class="numero-card__actions">
+              <a class="btn btn--primary" href="#visualizacoes">Abrir dashboard</a>
+              <a
+                class="btn btn--secondary"
+                href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver mapa
+              </a>
+            </div>
           </article>
         </div>
+      </div>
+    </section>
+
+    <section id="estrutura-tecnica" class="section section--estrutura" aria-labelledby="estrutura-title">
+      <div class="container container--wide reveal">
+        <h2 class="section__title" id="estrutura-title">Estrutura técnica</h2>
+
+        <p class="section__text">
+          O trabalho integra três ferramentas, cada uma com um papel definido.
+        </p>
+
+        <div class="cards cards--tools">
+          <article class="card tool-card">
+            <h3 class="tool-card__title">ArcGIS</h3>
+            <p class="tool-card__text">
+              Base geográfica. Agências georreferenciadas com latitude e
+              longitude.
+            </p>
+          </article>
+          <article class="card tool-card">
+            <h3 class="tool-card__title">Power BI</h3>
+            <p class="tool-card__text">
+              Modelagem e análise. Modelo estrela, medidas em DAX e dashboard de
+              2 páginas.
+            </p>
+          </article>
+          <article class="card tool-card">
+            <h3 class="tool-card__title">Este site</h3>
+            <p class="tool-card__text">
+              Reúne e apresenta o trabalho em um só lugar.
+            </p>
+          </article>
+        </div>
+
+        <div class="estrutura__diagram" aria-labelledby="diagram-title">
+          <h3 id="diagram-title" class="estrutura__diagram-title">Modelo de dados (estrela)</h3>
+          <div class="estrutura__svg-wrap">
+            <svg class="estrutura__svg" viewBox="-30 -30 660 480" role="img" aria-label="Diagrama de modelo estrela: tabela fato Fato_Agencias no centro conectada a cinco dimensões ao redor">
+              <!-- Dimensões -->
+              <g class="estrutura__dim" data-name="Dim_Agencia">
+                <circle class="estrutura__dim-circle" cx="120" cy="100" r="55"></circle>
+                <text class="estrutura__dim-label" x="120" y="100">Dim_Agencia</text>
+              </g>
+              <g class="estrutura__dim" data-name="Dim_Instituicao">
+                <circle class="estrutura__dim-circle" cx="300" cy="30" r="55"></circle>
+                <text class="estrutura__dim-label" x="300" y="30">Dim_Instituicao</text>
+              </g>
+              <g class="estrutura__dim" data-name="Dim_Regiao">
+                <circle class="estrutura__dim-circle" cx="480" cy="100" r="55"></circle>
+                <text class="estrutura__dim-label" x="480" y="100">Dim_Regiao</text>
+              </g>
+              <g class="estrutura__dim" data-name="Dim_Periodo">
+                <circle class="estrutura__dim-circle" cx="480" cy="320" r="55"></circle>
+                <text class="estrutura__dim-label" x="480" y="320">Dim_Periodo</text>
+              </g>
+              <g class="estrutura__dim" data-name="Dim_Canal">
+                <circle class="estrutura__dim-circle" cx="120" cy="320" r="55"></circle>
+                <text class="estrutura__dim-label" x="120" y="320">Dim_Canal</text>
+              </g>
+
+              <!-- Linhas conectando ao fato -->
+              <line class="estrutura__line" x1="175" y1="100" x2="245" y2="180"></line>
+              <line class="estrutura__line" x1="300" y1="85" x2="300" y2="140"></line>
+              <line class="estrutura__line" x1="425" y1="100" x2="355" y2="180"></line>
+              <line class="estrutura__line" x1="425" y1="320" x2="355" y2="240"></line>
+              <line class="estrutura__line" x1="175" y1="320" x2="245" y2="240"></line>
+
+              <!-- Tabela fato no centro -->
+              <rect class="estrutura__fato-rect" x="265" y="160" width="70" height="80" rx="6"></rect>
+              <text class="estrutura__fato-label" x="300" y="190">Fato_Agencias</text>
+              <text class="estrutura__fato-sub" x="300" y="215">(fato)</text>
+            </svg>
+          </div>
+          <p class="estrutura__diagram-legend">Modelo estrela: 1 tabela fato e 5 dimensões.</p>
+        </div>
+
+        <div class="estrutura__measures" aria-labelledby="measures-title">
+          <h3 id="measures-title" class="estrutura__measures-title">Medidas DAX</h3>
+          <table class="estrutura__table">
+            <thead>
+              <tr>
+                <th scope="col">Medida</th>
+                <th scope="col">O que calcula</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Total de Agências</strong></td>
+                <td>Contagem de agências (COUNTROWS)</td>
+              </tr>
+              <tr>
+                <td><strong>Distância Média (km)</strong></td>
+                <td>Média da distância das agências ao centro</td>
+              </tr>
+              <tr>
+                <td><strong>Ativo Médio (R$ bi)</strong></td>
+                <td>Média do ativo total por instituição</td>
+              </tr>
+              <tr>
+                <td><strong>Reclamações Médias</strong></td>
+                <td>Média do índice de reclamações por instituição</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="estrutura__measures-note">
+            Ativo e reclamações são calculados por instituição (e não por
+            agência), para que bancos com mais agências não pesem mais na média.
+            São dados nacionais por instituição, não específicos de Betim. O
+            Sicoob Crediesmeraldas não possui esses dados.
+          </p>
+        </div>
+
+        <div class="estrutura__actions">
+          <a
+            class="btn btn--primary"
+            href="#visualizacoes"
+          >
+            Abrir dashboard
+          </a>
+          <a
+            class="btn btn--secondary"
+            href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver mapa no ArcGIS
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="visualizacoes" class="section section--bi">
+      <div class="container container--wide reveal">
+        <div class="bi-intro">
+          <div class="bi-intro__copy">
+            <span class="eyebrow">Visualizações · Power BI</span>
+            <h2 class="section__title">Painel de BI</h2>
+            <p class="section__text">
+              Recriação navegável da página de visão geral do relatório, com os
+              mesmos filtros, indicadores e gráficos. Explore por instituição,
+              região e tipo de instituição, clique nos gráficos e navegue pelo
+              mapa.
+            </p>
+          </div>
+          <div class="bi-intro__aside">
+            <div class="bi-intro__actions">
+              <a
+                class="btn btn--secondary"
+                href="https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Abrir mapa no ArcGIS
+              </a>
+              <a
+                class="btn btn--primary"
+                href="https://app.powerbi.com/groups/me/reports/fb79c1c2-ac3f-4af9-aeef-3217d504fb85/ReportSection?experience=power-bi"
+                target="_blank"
+                rel="noopener noreferrer"
+                data-powerbi-link
+              >
+                <svg class="btn__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                  <rect x="4" y="10" width="16" height="11" rx="2"></rect>
+                  <path d="M8 10V7a4 4 0 0 1 8 0v3"></path>
+                </svg>
+                Abrir no Power BI
+              </a>
+            </div>
+            <p class="bi-intro__hint">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <circle cx="12" cy="12" r="9"></circle>
+                <path d="M12 11v5"></path>
+                <path d="M12 8h.01"></path>
+              </svg>
+              O relatório original exige login institucional no Power BI. A prévia é pública.
+            </p>
+          </div>
+        </div>
+
+        <div class="bi-shell">
+          <div class="bi-shell__bar">
+            <span class="bi-shell__dots" aria-hidden="true"><i></i><i></i><i></i></span>
+            <span class="bi-shell__url">app.powerbi.com · Agências Betim</span>
+            <span class="bi-shell__badge"><i></i>Prévia interativa</span>
+          </div>
+
+          <div class="bi" id="bi-dashboard">
+            <header class="bi__header">
+              <div class="bi__heading">
+                <h3>Agências bancárias em Betim</h3>
+                <p>20 agências · 7 instituições · 4 regiões</p>
+              </div>
+              <p class="bi__meta">Painel de BI · Instituição, região e tipo</p>
+            </header>
+
+            <div class="bi__layout">
+              <aside class="bi-filters" aria-label="Filtros do painel">
+                <div class="bi-filters__head">
+                  <span class="bi-filters__title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                      <path d="M3 4h18l-7 8v6l-4 2v-8L3 4Z"></path>
+                    </svg>
+                    Filtros
+                  </span>
+                  <button class="bi-reset" id="bi-reset" type="button" disabled>Limpar</button>
+                </div>
+                <div class="bi-filters__groups">
+                  <section class="bi-filter" aria-labelledby="bi-filter-instituicao-label">
+                    <div class="bi-filter__head">
+                      <h4 id="bi-filter-instituicao-label">Instituição</h4>
+                      <span class="bi-filter__count" data-count-for="instituicao">7</span>
+                    </div>
+                    <div class="bi-filter__options" id="bi-filter-instituicao" role="group" aria-labelledby="bi-filter-instituicao-label"></div>
+                  </section>
+
+                  <section class="bi-filter" aria-labelledby="bi-filter-regiao-label">
+                    <div class="bi-filter__head">
+                      <h4 id="bi-filter-regiao-label">Região</h4>
+                      <span class="bi-filter__count" data-count-for="regiao">4</span>
+                    </div>
+                    <div class="bi-filter__options" id="bi-filter-regiao" role="group" aria-labelledby="bi-filter-regiao-label"></div>
+                  </section>
+
+                  <section class="bi-filter" aria-labelledby="bi-filter-tipo-label">
+                    <div class="bi-filter__head">
+                      <h4 id="bi-filter-tipo-label">Tipo de instituição</h4>
+                      <span class="bi-filter__count" data-count-for="tipo">3</span>
+                    </div>
+                    <div class="bi-filter__options" id="bi-filter-tipo" role="group" aria-labelledby="bi-filter-tipo-label"></div>
+                  </section>
+                </div>
+                <p class="bi-filters__hint">Selecione um ou mais valores em cada grupo.</p>
+              </aside>
+
+              <div class="bi__content">
+                <div class="bi-kpis">
+                  <article class="bi-kpi">
+                    <span class="bi-kpi__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                        <path d="M3 10.5 12 3l9 7.5"></path>
+                        <path d="M5 9.5V21h14V9.5"></path>
+                        <path d="M9 21v-6h6v6"></path>
+                      </svg>
+                    </span>
+                    <div class="bi-kpi__body">
+                      <span class="bi-kpi__label">Total de agências</span>
+                      <strong class="bi-kpi__value" id="bi-kpi-total" aria-live="polite">20</strong>
+                    </div>
+                  </article>
+
+                  <article class="bi-kpi">
+                    <span class="bi-kpi__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                        <circle cx="12" cy="12" r="9"></circle>
+                        <path d="M12 7v10"></path>
+                        <path d="M15.2 9.4c-.7-.9-1.8-1.3-3.2-1.3-1.8 0-3 .8-3 2.1 0 2.9 6.4 1.5 6.4 4.4 0 1.4-1.3 2.2-3.2 2.2-1.4 0-2.6-.5-3.3-1.5"></path>
+                      </svg>
+                    </span>
+                    <div class="bi-kpi__body">
+                      <span class="bi-kpi__label">Ativo médio (R$ bi)</span>
+                      <strong class="bi-kpi__value" id="bi-kpi-ativo" aria-live="polite">1.857,50</strong>
+                    </div>
+                  </article>
+
+                  <article class="bi-kpi">
+                    <span class="bi-kpi__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                        <path d="M10.3 3.7 2.5 17a2 2 0 0 0 1.7 3h15.6a2 2 0 0 0 1.7-3L13.7 3.7a2 2 0 0 0-3.4 0Z"></path>
+                        <path d="M12 9v4"></path>
+                        <path d="M12 17h.01"></path>
+                      </svg>
+                    </span>
+                    <div class="bi-kpi__body">
+                      <span class="bi-kpi__label">Reclamações médias</span>
+                      <strong class="bi-kpi__value" id="bi-kpi-reclamacoes" aria-live="polite">56,34</strong>
+                    </div>
+                  </article>
+
+                  <article class="bi-kpi">
+                    <span class="bi-kpi__icon" aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+                        <path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+                        <circle cx="12" cy="10" r="2.5"></circle>
+                      </svg>
+                    </span>
+                    <div class="bi-kpi__body">
+                      <span class="bi-kpi__label">Distância média (km)</span>
+                      <strong class="bi-kpi__value" id="bi-kpi-distancia" aria-live="polite">3,28</strong>
+                    </div>
+                  </article>
+                </div>
+
+                <div class="bi__row bi__row--top">
+                  <article class="bi-panel bi-panel--map" aria-labelledby="bi-map-title">
+                    <div class="bi-panel__head">
+                      <h4 id="bi-map-title">Mapa das agências</h4>
+                      <div class="bi-map__tools" aria-label="Controles do mapa">
+                        <button type="button" id="bi-zoom-out" aria-label="Diminuir zoom">−</button>
+                        <button type="button" id="bi-zoom-in" aria-label="Aumentar zoom">+</button>
+                        <button type="button" id="bi-zoom-reset" aria-label="Restaurar zoom">↺</button>
+                      </div>
+                    </div>
+                    <div class="bi-map" id="bi-map">
+                      <div class="bi-map__stage" id="bi-map-stage">
+                        <img
+                          class="bi-map__basemap"
+                          src="assets/img/betim-basemap.webp"
+                          alt=""
+                          width="1200"
+                          height="532"
+                          decoding="async"
+                        />
+                        <svg
+                          class="bi-map__svg"
+                          id="bi-map-svg"
+                          viewBox="0 0 1200 532"
+                          preserveAspectRatio="none"
+                          role="group"
+                          aria-label="Mapa com a localização das agências bancárias de Betim"
+                        ></svg>
+                      </div>
+                      <div class="bi-map__tooltip" id="bi-map-tooltip" role="tooltip" aria-hidden="true"></div>
+                      <p class="bi-map__empty" id="bi-map-empty" hidden>Nenhuma agência com os filtros atuais.</p>
+                      <span class="bi-map__credit">Basemap © Esri</span>
+                    </div>
+                    <div class="bi-map__legend" id="bi-map-legend"></div>
+                  </article>
+
+                  <article class="bi-panel bi-panel--bars" aria-labelledby="bi-bars-title">
+                    <div class="bi-panel__head">
+                      <h4 id="bi-bars-title">Agências por instituição</h4>
+                      <span class="bi-panel__hint">clique para destacar</span>
+                    </div>
+                    <div class="bi-bars" id="bi-bars"></div>
+                  </article>
+                </div>
+
+                <div class="bi__row bi__row--bottom">
+                  <article class="bi-panel bi-panel--donut" aria-labelledby="bi-donut-title">
+                    <div class="bi-panel__head">
+                      <h4 id="bi-donut-title">Agências por região</h4>
+                    </div>
+                    <div class="bi-donut" id="bi-donut">
+                      <div class="bi-donut__chart">
+                        <svg id="bi-donut-svg" viewBox="0 0 200 200" role="img" aria-label="Distribuição das agências por região"></svg>
+                        <div class="bi-donut__center">
+                          <strong id="bi-donut-total">20</strong>
+                          <span>agências</span>
+                        </div>
+                      </div>
+                      <div class="bi-donut__legend" id="bi-donut-legend"></div>
+                    </div>
+                  </article>
+
+                  <article class="bi-panel bi-panel--stacked" aria-labelledby="bi-stacked-title">
+                    <div class="bi-panel__head">
+                      <h4 id="bi-stacked-title">Agências por região e tipo</h4>
+                      <div class="bi-type-legend" id="bi-type-legend"></div>
+                    </div>
+                    <div class="bi-stacked" id="bi-stacked"></div>
+                  </article>
+                </div>
+
+                <div class="bi-status">
+                  <p class="bi-status__summary" id="bi-status-summary" aria-live="polite">Mostrando todas as 20 agências</p>
+                  <div class="bi-status__chips" id="bi-status-chips"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <details class="bi-data">
+          <summary>
+            Ver dados em tabela
+            <span id="bi-table-count">20 agências</span>
+          </summary>
+          <div class="bi-data__scroll">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Instituição</th>
+                  <th scope="col">Agência</th>
+                  <th scope="col">Endereço</th>
+                  <th scope="col">Região</th>
+                  <th scope="col">Distância</th>
+                  <th scope="col">Reclamações (Bacen)</th>
+                </tr>
+              </thead>
+              <tbody id="bi-table-body"></tbody>
+            </table>
+          </div>
+        </details>
+
+        <p class="bi-footnote">
+          Prévia construída com os mesmos dados do relatório acadêmico. O
+          arquivo .pbix não é distribuído. O painel original está em um
+          workspace restrito do Power BI e o botão “Abrir no Power BI” requer
+          login institucional.
+        </p>
       </div>
     </section>
 
@@ -166,6 +655,8 @@
   </footer>
 
   <script type="module" src="js/money3d.js" onerror="this.remove()"></script>
+  <script src="assets/data/agencias.js"></script>
   <script src="js/main.js"></script>
+  <script src="js/bi.js"></script>
 </body>
 </html>

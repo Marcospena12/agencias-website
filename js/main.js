@@ -1,32 +1,14 @@
-const POWERBI_URL = "";
+const POWERBI_URL =
+  "https://app.powerbi.com/groups/me/reports/fb79c1c2-ac3f-4af9-aeef-3217d504fb85/ReportSection?experience=power-bi";
 
 const ano = document.getElementById("ano");
 if (ano) {
   ano.textContent = new Date().getFullYear();
 }
 
-function ativarPainelPowerBI() {
-  if (!POWERBI_URL) return;
-
-  const status = document.getElementById("powerbi-status");
-  if (status) {
-    const botao = document.createElement("a");
-    botao.className = "btn btn--primary";
-    botao.href = POWERBI_URL;
-    botao.target = "_blank";
-    botao.rel = "noopener noreferrer";
-    botao.textContent = "Abrir painel";
-    status.replaceWith(botao);
-  }
-
-  const botaoHero = document.getElementById("btn-powerbi-hero");
-  if (botaoHero) {
-    botaoHero.href = POWERBI_URL;
-    botaoHero.target = "_blank";
-    botaoHero.rel = "noopener noreferrer";
-  }
-}
-ativarPainelPowerBI();
+document.querySelectorAll("[data-powerbi-link]").forEach((link) => {
+  if (POWERBI_URL) link.href = POWERBI_URL;
+});
 
 (function mapaDePontos() {
   const canvas = document.getElementById("hero-canvas");

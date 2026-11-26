@@ -44,7 +44,7 @@ O site é de página única e acompanha o desenvolvimento do projeto:
 |---|---|
 | Site do trabalho | <https://agencias-website.vercel.app/> |
 | Mapa no ArcGIS | [Ver mapa](https://www.arcgis.com/apps/instant/atlas/index.html?appid=6dce4b5af67345db8f74dda30ad1986d&webmap=09a2a8202f6d4326a457160ee86d04bc) |
-| Relatório no Power BI | [Abrir relatório](https://app.powerbi.com/groups/me/reports/fb79c1c2-ac3f-4af9-aeef-3217d504fb85/ReportSection?experience=power-bi) (exige login institucional) |
+| Relatório no Power BI | [Abrir relatório](https://app.powerbi.com/links/LiICFG6Hgd?ctid=5e2a8164-87b6-430b-ac6b-08d6229e7059&pbi_source=linkShare) (exige login institucional) |
 
 A prévia interativa é pública e não depende de acesso ao workspace
 privado do Power BI.
